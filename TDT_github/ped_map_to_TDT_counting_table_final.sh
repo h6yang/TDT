@@ -1,5 +1,7 @@
 #!/bin/bash
-# on mac
+
+# go to your working directory
+cd /your/working/directory/
 
 # input the data file name after PREFIX, notice that ped and map file need to be same prefix. (eg. sample_3.ped sample_3.map)
 export PREFIX=sample_3
@@ -58,7 +60,6 @@ awk  '{  print $1, $2, $3, $4, $6}' ${PREFIX}.ped  | awk '{print $1}'  | sort | 
 
 	  # paste b & c value and pattern_count.temp into one row
 	  paste  b_c.temp pattern_count.temp >> fam_genotype_pattern.temp
-
  
 done
 
@@ -68,9 +69,6 @@ done
 
  # clear the process files
  rm *.temp rsxxxxxxx*
-
- # hand calculate to double check the b and c value from family genotype pattern and plink output.
- # grep IGR2011b_1 tdt_count_only.txt | sed "s/M/A/g" | sed "s/m/C/g"
 
 ######################################################################################################################################################
 
